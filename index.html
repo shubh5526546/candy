@@ -1,43 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Gaming & Secret Chat</title>
-  <link rel="stylesheet" href="style.css"/>
+  <title>Shubham Chat</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <h1>🎮 Welcome to the Game Zone</h1>
+  <div class="chat-container">
+    <h1>💬 Real-Time Chat</h1>
+<h2 id="typingIndicator" style="color: gray; font-size: 16px;"></h2>
+<h3 id="onlineStatus" style="color: green; font-size: 14px;"></h3>
 
-   <div id="game-section">
-  <h2>🎲 Play Ludo Online</h2>
- <!-- MINI LUDO GAME -->
-<div class="board" id="board"></div>
-
-<div class="controls">
-  <p>Current Player: <span id="currentPlayer">1</span></p>
-  <button onclick="rollDice()">Roll Dice</button>
-  <p>Dice: <span id="diceValue">-</span></p>
-</div>
-</div>
-
-    <hr/>
-
-    <div id="chat-unlock">
-      <input type="password" id="chatPassword" placeholder="Enter secret code to unlock chat" />
-      <button onclick="unlockChat()">Unlock Chat</button>
-    </div>
-
-    <div id="chat-section" class="hidden">
-      <h2>💬 Secret Chat Room</h2>
-      <div id="chat-box">
-        <div id="messages"></div>
-        <input type="text" id="chatInput" placeholder="Type a message..." onkeydown="handleKey(event)" />
-        <button onclick="sendMessage()">Send</button>
-      </div>
+    <div id="chatBox" class="chat-box"></div>
+    <div class="chat-input">
+      <input type="text" id="username" placeholder="Your name" />
+      <input type="text" id="messageInput" placeholder="Type a message..." />
+      <button onclick="sendMessage()">Send</button>
     </div>
   </div>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+  <script>
+    // 🔴 Replace this with your own Firebase config
+    const firebaseConfig = {
+  apiKey: "AIzaSyAZ4P9PxfUJdDai_fa-ejOA0ADvs2eUWy4",
+  authDomain: "chating-609a1.firebaseapp.com",
+  projectId: "chating-609a1",
+  storageBucket: "chating-609a1.firebasestorage.app",
+  messagingSenderId: "712981412345",
+  appId: "1:712981412345:web:25948bbcfccd918c4b2528",
+  measurementId: "G-5MSEYC09VZ"
+};
+
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.database();
+  </script>
 
   <script src="script.js"></script>
 </body>
