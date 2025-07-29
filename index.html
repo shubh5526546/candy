@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gaming & Secret Chat</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container">
+    <h1>🎮 Welcome to the Game Zone</h1>
+
+   <div id="game-section">
+  <h2>🎲 Play Ludo Online</h2>
+ <!-- MINI LUDO GAME -->
+<div class="board" id="board"></div>
+
+<div class="controls">
+  <p>Current Player: <span id="currentPlayer">1</span></p>
+  <button onclick="rollDice()">Roll Dice</button>
+  <p>Dice: <span id="diceValue">-</span></p>
+</div>
+</div>
+
+    <hr/>
+
+    <div id="chat-unlock">
+      <input type="password" id="chatPassword" placeholder="Enter secret code to unlock chat" />
+      <button onclick="unlockChat()">Unlock Chat</button>
+    </div>
+
+    <div id="chat-section" class="hidden">
+      <h2>💬 Secret Chat Room</h2>
+      <div id="chat-box">
+        <div id="messages"></div>
+        <input type="text" id="chatInput" placeholder="Type a message..." onkeydown="handleKey(event)" />
+        <button onclick="sendMessage()">Send</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+body { font-family: sans-serif; background: #f3f3f3; text-align: center; margin: 0; padding: 0; }
+.container { padding: 20px; max-width: 900px; margin: auto; }
+
+#chat-unlock, .dice-area { margin: 15px 0; }
+input[type="password"], input[type="text"], button { font-size: 16px; padding: 8px; margin: 4px; }
+button { cursor: pointer; background: #007bff; color: #fff; border: none; border-radius: 4px; }
+button:hover { background: #0056b3; }
+
+.hidden { display: none; }
+#messages { height: 120px; overflow-y: auto; border: 1px solid #ccc; padding: 8px; margin-bottom: 8px; }
+
+#ludo-board {
+  display: grid;
+  grid-template-columns: repeat(15, 40px);
+  grid-template-rows: repeat(15, 40px);
+  margin: 0 auto;
+  width: fit-content;
+  border: 2px solid #333;
+}
+
+.cell { width: 40px; height: 40px; box-sizing: border-box; border: 1px solid #666; position: relative; }
+.red-home { background: #e74c3c; }
+.green-home { background: #2ecc71; }
+.yellow-home { background: #f1c40f; }
+.blue-home { background: #3498db; }
+.safe { background: #dcdcdc; }
+
+.piece {
+  width: 30px; height: 30px; border-radius: 50%;
+  position: absolute; top: 5px; left: 5px;
+  text-align: center; line-height: 30px; color: #fff; font-weight: bold;
+}
+.piece.red { background: #c0392b; }
+.piece.green { background: #27ae60; }
+.piece.yellow { background: #f39c12; }
+.piece.blue { background: #2980b9; }
